@@ -90,6 +90,13 @@ java_setup(){
     VALIDATE $? "Installing dependencies"
 }
 
+python_setup(){
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Installing Python"
+    pip3 install -r requirements.txt  &>>$LOG_FILE
+    VALIDATE $? "Installing dependencies"
+}
+
 systemd_setup(){
     cp $SCRIPT_DIR/$app_name.service /etc/systemd/system/$app_name.service
     VALIDATE $? "Creating systemctl service"
