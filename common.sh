@@ -85,7 +85,7 @@ systemd_setup(){
     cp $SCRIPT_DIR/$app_name.service /etc/systemd/system/$app_name.service
     VALIDATE $? "Creating systemctl service"
 
-    systemctl daemon-reload &>> $LOG_FILE
+    systemctl daemon-reload 
     system enable $app_name &>> $LOG_FILE
     VALIDATE $? "Enabling the $app_name"
 }
