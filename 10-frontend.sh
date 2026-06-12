@@ -26,3 +26,5 @@ VALIDATE $? "Copied roboshop nginx conf"
 systemctl restart nginx
 systemctl enable nginx &>> $LOG_FILE
 VALIDATE $? "Enabled and restarted nginx"
+
+print_total_time
