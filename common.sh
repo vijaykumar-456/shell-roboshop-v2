@@ -86,12 +86,12 @@ systemd_setup(){
     VALIDATE $? "Creating systemctl service"
 
     systemctl daemon-reload 
-    system enable $app_name &>> $LOG_FILE
+    systemctl enable $app_name &>> $LOG_FILE
     VALIDATE $? "Enabling the $app_name"
 }
 
 app_restart(){
-    systemctl restart $app_name &>> $LOG_FILE
+    systemctl restart $app_name 
     VALIDATE $? "Restarting the $app_name"
 
 }
