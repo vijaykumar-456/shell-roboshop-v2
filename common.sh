@@ -14,6 +14,8 @@ sudo chmod -R 755 $LOG_FOLDER
 #4. specify the log path with folder/file name
 LOG_FILE="$LOG_FOLDER/$0.log"
 
+SCRIPT_DIR=$PWD
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
